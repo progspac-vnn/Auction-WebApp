@@ -1,3 +1,4 @@
+# Django Only
 from django.contrib import admin
 from django.urls import path, include
 from django.conf.urls.static import static
@@ -8,6 +9,7 @@ urlpatterns = [
     path('login/', login_view, name="login_page"),
     path('check/', check, name="check"),
     path('verify/', verify, name="verify"),
+    path('verified/', verified, name="verified"),
 ]
 
 if settings.DEBUG:

@@ -8,6 +8,9 @@ from django.contrib.auth.decorators import login_required
 def login_view(request):
     return render(request, 'login.html')
 
+def verified(request):
+    return render(request, 'verify.html')
+
 def check(request):
 
     if request.method == 'POST':
@@ -24,12 +27,11 @@ def check(request):
             user.send_otp()
             user.save()
             
-            return render(request, 'verify.html')
+            return redirect('verified')
         else:
             return redirect('login_page')
     
     return redirect('login_page')
-
 
 def verify(request):
     if request.method == 'POST':

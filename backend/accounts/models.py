@@ -67,4 +67,3 @@ class customUser(AbstractUser):
         self.send_otp_email(otp)
 
         return otp
-

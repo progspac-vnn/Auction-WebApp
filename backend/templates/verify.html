@@ -1,0 +1,28 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Otp Verification</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+</head>
+<body>
+    <div name="page-title">    
+        <h1 style="text-align: center;">Otp Verification</h1>
+    </div>
+
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <form method="post" action="{% url 'verify' %}">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <label for="form2Example1">Enter Otp Sent to your Email Id</label>
+                        <input type="password" name="otp" id="form2Example1" class="form-control" />
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block mb-4">Verify OTP</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
